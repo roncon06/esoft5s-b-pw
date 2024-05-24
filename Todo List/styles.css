@@ -5,6 +5,7 @@ h2,
 p,
 ul,
 ol,
+li,
 figure,
 table,
 th,
@@ -17,122 +18,95 @@ td {
   box-sizing: border-box;
 }
 
-
-
 body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
   min-height: 100vh;
 }
 
-header {
-  background-color: #333;
-  padding: 1rem;
-  text-align: center;
-}
-
-main {
-  background-color: #f4f4f4;
-  color: black;
-}
-
-
-header h1 {
-  font-size: 24px;
-}
-
-header a {
-  text-decoration: none;
-  color: white;
-}
-
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 20px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-}
-
-
+header,
 footer {
   background-color: #333;
   color: #fff;
   padding: 20px;
-  bottom: 0;
+  text-align: center;
+}
+
+main {
+  padding: 16px;
+}
+
+main form {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   align-items: center;
-  gap: 1px;
-  margin-top: auto;
+  width: 40ch;
+  margin: 0 auto;
 }
 
-footer p {
-  margin-bottom: 0;
-}
-
-#form {
-  display: flex;
-  padding: 1rem;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-#form button {
-  background-color: #0074d9;
-  border: none;
+input,
+textarea {
+  width: 100%;
   padding: 8px;
-  color: white;
+  font-size: 16px;
+}
+
+input,
+textarea::placeholder {
+  font-family: 'Arial', sans-serif;
+}
+
+#save-task,
+#update-task,
+#cancel-update {
+  background-color: #0074d9;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
   cursor: pointer;
 }
 
-#task-title {
-  width: 14rem;
-  padding: 1rem;
-  font-size: 16px;
-}
-
-#task-description {
-  width: 14rem;
-  resize: vertical;
-  padding: 1rem;
-  font-size: 16px;
-}
-
-#task-list li {
-  text-align: left;
-}
-
-#task-list {
-  padding: 1rem;
+ul {
   list-style: none;
+  padding: 0;
+  max-width: 80ch;
+  margin: 0 auto;
 }
 
-#task-list li {
-  border: 1px solid #ddd;
-  margin-bottom: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 4px;
-
+main ul li div {
+  display: flex;
+  justify-content: space-between;
 }
 
-#task-list h3 {
-  padding: 1rem;
-  margin-top: 1px;
-  margin-bottom: 0.5rem; 
+.open-modal {
+  background: none;
+  background-color: #676767;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
 }
 
-#task-list p {
-  padding: 1rem;
+.open-modal:hover {
+  background-color: #555555;
+}
+
+li {
+  margin: 8px 0;
+  padding: 20px;
+  border: solid 1px #ccc;
+}
+
+li p {
   white-space: pre-wrap;
-  font-size: 0.9rem;
-  margin: 0.5rem 0 0 0; 
+  margin-top: 10px;
 }
-
-
